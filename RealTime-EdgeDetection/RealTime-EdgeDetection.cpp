@@ -18,8 +18,14 @@ int main()
 	}
 
 	for (;;) {
+		// Retrieve image from camera
 		Mat frame;
 		cam >> frame;
+
+		// Modify image
+		cvtColor(frame, frame, COLOR_BGR2GRAY);
+
+		// Display image
 		imshow("Camera Feed", frame);
 
 		keyPress = waitKey(1);
