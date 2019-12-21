@@ -24,6 +24,7 @@ int main()
 
 		// Modify image
 		cvtColor(frame, frame, COLOR_BGR2GRAY);
+		GaussianBlur(frame, frame, Size(9,9), 2); // stdev=2 -> 9x9
 
 		// Display image
 		imshow("Camera Feed", frame);
